@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-10-10 09:59:00 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="entity" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.qurishimi.touch.encje.Car" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="car">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.qurishimi.touch.encje.User" embed-xml="true" fetch="select" insert="true" name="user" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="user"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="model" optimistic-lock="true" type="string" unique="false">
+            <column length="45" name="model"/>
+        </property>
+    </class>
+</hibernate-mapping>
